@@ -10,6 +10,8 @@ module.exports = {
       current: "currentColor",
       white: "#ffffff",
       grey: "#98989C",
+      green: "#60b929",
+      red: "#cc2323",
     },
   },
   plugins: [],
