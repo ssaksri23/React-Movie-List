@@ -5,6 +5,12 @@ module.exports = {
     container: {
       center: true,
     },
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: "#ffffff",
+      grey: "#98989C",
+    },
   },
   plugins: [],
 };
