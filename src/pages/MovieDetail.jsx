@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Title from "../component/MovieInfo/Title";
 import Headers from "../component/Headers";
 import Info from "../component/MovieInfo/Info";
+import TabMenu from "../component/TabMenu";
 
 export default function MovieDetail() {
   const {
@@ -22,10 +23,11 @@ export default function MovieDetail() {
     },
   } = useLocation();
   console.log(movieInfo);
+
   return (
     <>
       <Headers className="text-2xl">영화 상세 페이지</Headers>
-      <div className="flex">
+      <div className="flex my-10">
         <img
           className="w-52"
           src={`https://image.tmdb.org/t/p/original/${poster_path}`}
@@ -44,6 +46,9 @@ export default function MovieDetail() {
             <Info info={popularity}>누적관객</Info>
           </div>
         </div>
+      </div>
+      <div>
+        <TabMenu overview={overview} defaultTab={1} />
       </div>
     </>
   );
