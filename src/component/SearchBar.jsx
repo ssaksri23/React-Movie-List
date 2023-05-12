@@ -5,7 +5,7 @@ import { useDebounceSuggestion } from "../hooks/useDebounceSuggestion";
 import SearchList from "./Search/SearchList";
 
 export default function SearchBar() {
-  const { value, onChange, setValue } = useInput("");
+  const { value, onChange } = useInput("");
   const { suggestions } = useDebounceSuggestion(value);
 
   return (

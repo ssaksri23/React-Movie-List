@@ -1,7 +1,5 @@
 import { AxiosError } from "axios";
 import { axiosInstance } from "./axiosInstance";
-import { BASE_URL } from "../constant/baseURL";
-import { getCachedData, setCachedData } from "../utils/cache";
 
 const getBoxOfficeList = async () => {
   try {
