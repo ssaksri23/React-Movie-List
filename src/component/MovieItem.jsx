@@ -8,7 +8,7 @@ export default function MovieItem({ movieInfo, index, id }) {
 
   return (
     <li
-      className="flex flex-col px-5 w-full"
+      className="flex flex-col px-5 w-full hover:cursor-pointer"
       onClick={() => {
         navigate(`/details/${id}`, { state: { movieInfo } });
       }}
