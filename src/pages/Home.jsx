@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import movieApi from "../api/movieAPI";
 import MovieList from "../component/MovieList";
 import SearchBar from "../component/SearchBar";
+import Headers from "../component/Headers";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [movieList, setMovieList] = useState([]);
 
   const getDailyMovie = async () => {
-    const res = await movieApi.getBoxOfficeList(
-      "199ff03db6855d0ed5343e92968fef7e",
-      20230101
-    );
-    setMovieList(res);
+    const res = await movieApi.getBoxOfficeList();
+    setLoading(true);
+    if (res.length > 0) {
+      setLoading(false);
+      setMovieList(res);
+    }
   };
 
   useEffect(() => {
@@ -20,10 +23,15 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="mb-5">지나인 : 영화목록 사전과제</h1>
-      <SearchBar />
-      <h2 className="text-center p-8">박스 오피스</h2>
-      <MovieList movieList={movieList} />
+      {loading ? (
+        <p>로딩중입니다..</p>
+      ) : (
+        <>
+          <Headers>예매 순위</Headers>
+          <SearchBar />
+          <MovieList movieList={movieList} />
+        </>
+      )}
     </>
   );
 }
