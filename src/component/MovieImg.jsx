@@ -6,7 +6,7 @@ export default function MovieImg({ movieInfo, index }) {
   return (
     <div className="relative">
       <span className="absolute left-3 top-1 text-white text-2xl font-bold">
-        {index}
+        {index + 1}
       </span>
       <img
         className="w-50 h-70 object-cover rounded-md border-2 border-grey"
