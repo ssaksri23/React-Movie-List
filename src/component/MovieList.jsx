@@ -7,7 +7,12 @@ export default function MovieList({ movieList }) {
       {movieList.length === 0 && <p>리스트가 존재하지 않습니다.</p>}
       {movieList &&
         movieList.map((movieInfo, index) => (
-          <MovieItem key={movieInfo.id} index={index} movieInfo={movieInfo} />
+          <MovieItem
+            key={movieInfo.id}
+            index={index}
+            movieInfo={movieInfo}
+            id={movieInfo.id}
+          />
         ))}
     </ul>
   );
