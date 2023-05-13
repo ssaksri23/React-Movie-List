@@ -19,10 +19,8 @@ export default function MovieDetail() {
         poster_path,
         popularity,
       },
-      movieInfo,
     },
   } = useLocation();
-  console.log(movieInfo);
 
   return (
     <>
@@ -31,7 +29,7 @@ export default function MovieDetail() {
         <img
           className="w-52"
           src={`https://image.tmdb.org/t/p/original/${poster_path}`}
-          alt="영화 제목입니다."
+          alt="영화포스터"
         />
         <div className="flex flex-col gap-8 pl-8">
           <div className="flex flex-col items-start">
