@@ -11,6 +11,7 @@ exports.handler = async (event) => {
       .map(([key, value]) => `${key}=${urlencode.encode(value)}`) // *** 인코딩 문제해결
       .join("&")
       .concat(`&key=${process.env.REACT_APP_API_KEY}`);
+    console.log(parameters);
     const URI = `${YOUTUBE_SEARCH_ENDPOINT}?${parameters}`;
     const response = await fetch(URI);
     const { statusCode, statusText, ok, headers } = response;
