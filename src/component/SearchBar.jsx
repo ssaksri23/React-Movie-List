@@ -27,7 +27,7 @@ export default function SearchBar() {
           e.preventDefault();
           handleSearch();
         }}
-        className="w-96 m-auto mb-10 overflow-hidden "
+        className="w-96 m-auto overflow-hidden "
       >
         <label htmlFor="search_movie" />
         <div className="relative h-10 w-96 rounded-lg">

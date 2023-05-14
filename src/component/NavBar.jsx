@@ -10,10 +10,12 @@ export default function NavBar() {
   };
   return (
     <header className="">
-      <Link to="/" className="text-3xl pt-10">
-        Hyeppy-Movie
-      </Link>
-      <SearchBar />
+      <div className="flex flex-col ">
+        <Link to="/" className="text-3xl py-7">
+          Hyeppy-Movie
+        </Link>
+        <SearchBar />
+      </div>
       <nav className="flex justify-center gap-5 p-5 m-7 text-lg font-bold border-b-2 border-grey1">
         <Link
           to="/boxoffice"
