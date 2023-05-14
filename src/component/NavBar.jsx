@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 export default function NavBar() {
   const [active, setActive] = useState("/boxoffice"); // 현재 활성화된 링크의 경로를 저장하는 상태
@@ -12,6 +13,7 @@ export default function NavBar() {
       <Link to="/" className="text-3xl pt-10">
         Hyeppy-Movie
       </Link>
+      <SearchBar />
       <nav className="flex justify-center gap-5 p-5 m-7 text-lg font-bold border-b-2 border-grey1">
         <Link
           to="/boxoffice"
