@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import { axiosInstance } from "./axiosInstance";
 
+// 박스오피스 영화 조회 함수
 const getBoxOfficeList = async () => {
   try {
     const response = await axiosInstance.get("/discover/movie");
@@ -12,6 +13,7 @@ const getBoxOfficeList = async () => {
   }
 };
 
+// 키워드로 영화 검색하는 함수
 const searchMovie = async (keyword) => {
   try {
     const response = await axiosInstance.get("/search/movie", {
@@ -26,9 +28,22 @@ const searchMovie = async (keyword) => {
   }
 };
 
+// 현재 인기 영화 조회 함수
+const getPopularMovie = async () => {
+  try {
+    const response = await axiosInstance.get("/movie/popular");
+    return response.data.results;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return error.response;
+    }
+  }
+};
+
 const movieApi = {
   getBoxOfficeList,
   searchMovie,
+  getPopularMovie,
 };
 
 export default movieApi;
