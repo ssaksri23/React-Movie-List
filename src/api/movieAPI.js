@@ -20,7 +20,6 @@ const searchMovie = async (keyword) => {
       params: { query: keyword },
     });
     const data = await response.data.results;
-    console.info("calling api");
 
     return data;
   } catch (error) {

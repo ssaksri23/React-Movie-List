@@ -9,7 +9,6 @@ export default function BoxOffice() {
 
   const getDailyMovie = async () => {
     const res = await movieApi.getBoxOfficeList();
-    console.log(res);
 
     setLoading(true);
     if (res.length > 0) {

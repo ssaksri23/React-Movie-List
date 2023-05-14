@@ -9,7 +9,6 @@ export default function NowPlayingMovie() {
 
   const getNowPlayingrMovie = async () => {
     const res = await movieApi.getNowPlayingMovieList();
-    console.log(res);
     setLoading(true);
     if (res.length > 0) {
       setLoading(false);

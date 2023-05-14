@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
@@ -17,7 +17,9 @@ export default function NavBar() {
       <nav className="flex justify-center gap-5 p-5 m-7 text-lg font-bold border-b-2 border-grey1">
         <Link
           to="/boxoffice"
-          className={`${pathname === "/boxoffice" || "" ? "text-red" : ""}`}
+          className={`${
+            pathname === "/boxoffice" || pathname === "/" ? "text-red" : ""
+          }`}
         >
           박스오피스
         </Link>
