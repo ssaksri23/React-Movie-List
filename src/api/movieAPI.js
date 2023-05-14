@@ -28,10 +28,10 @@ const searchMovie = async (keyword) => {
   }
 };
 
-// 현재 인기 영화 조회 함수
-const getPopularMovie = async () => {
+// 현재 상영중인 영화 조회 함수
+const getNowPlayingMovieList = async () => {
   try {
-    const response = await axiosInstance.get("/movie/popular");
+    const response = await axiosInstance.get("/movie/now_playing");
     return response.data.results;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -43,7 +43,7 @@ const getPopularMovie = async () => {
 const movieApi = {
   getBoxOfficeList,
   searchMovie,
-  getPopularMovie,
+  getNowPlayingMovieList,
 };
 
 export default movieApi;

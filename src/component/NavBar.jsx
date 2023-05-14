@@ -17,15 +17,15 @@ export default function NavBar() {
       <nav className="flex justify-center gap-5 p-5 m-7 text-lg font-bold border-b-2 border-grey1">
         <Link
           to="/boxoffice"
-          className={`${pathname === "/boxoffice" ? "text-red" : ""}`}
+          className={`${pathname === "/boxoffice" || "" ? "text-red" : ""}`}
         >
           박스오피스
         </Link>
         <Link
-          to="/popular"
-          className={`${pathname === "/popular" ? "text-red" : ""}`}
+          to="/nowplaying"
+          className={`${pathname === "/nowplaying" ? "text-red" : ""}`}
         >
-          인기 영화
+          현재 상영작
         </Link>
       </nav>
     </header>

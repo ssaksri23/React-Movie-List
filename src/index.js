@@ -5,8 +5,8 @@ import "./index.css";
 import App from "./App";
 import NotFound from "./pages/NotFound";
 import MovieDetail from "./pages/MovieDetail";
-import PopularMovie from "./pages/PopularMovie";
 import BoxOffice from "./pages/BoxOffice";
+import NowPlayingMovie from "./pages/NowPlayingMovie";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         element: <MovieDetail />,
       },
       {
-        path: "/popular",
-        element: <PopularMovie />,
+        path: "/nowplaying",
+        element: <NowPlayingMovie />,
       },
     ],
   },
