@@ -16,7 +16,7 @@ export default function SearchList({ suggestions = [], setIsVisible, value }) {
     <ul
       className={`${
         value ? "block" : "hidden"
-      } p-2 mt-2 border-2 border-grey z-30 absolute bg-white max-h-96 overflow-y-auto w-96}`}
+      } w-96 p-2 mt-2 border-2 border-grey z-30 absolute bg-white max-h-96 overflow-y-auto}`}
     >
       {value && suggestions.length === 0 && <div>검색어 없음</div>}
       {suggestions.length > 0 &&
