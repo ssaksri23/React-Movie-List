@@ -4,16 +4,12 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useDebounceSuggestion } from "../../hooks/useDebounceSuggestion";
 import SearchList from "./SearchList";
 import { useClickOutside } from "../../hooks/useClickOutside";
-import { useKeyPress } from "../../hooks/useKeyPress";
 
 export default function SearchBar() {
   const { value, onChange, setValue } = useInput("");
   const { suggestions } = useDebounceSuggestion(value);
   const { ref, isVisible, setIsVisible } = useClickOutside();
-  const { focusIndex, setFocusIndex, onKeyDownHandler } = useKeyPress(
-    suggestions,
-    setValue
-  );
+
   const handleSearch = (e) => {
     e.preventDefault();
     setIsVisible(false);
@@ -38,9 +34,7 @@ export default function SearchBar() {
             onChange={onChangeInput}
             onFocus={() => {
               setIsVisible(true);
-              setFocusIndex(0);
             }}
-            onKeyDown={onKeyDownHandler}
             id="search_movie"
             type="text"
             placeholder="작품, 배우, 감독명을 입력하세요"
@@ -54,8 +48,6 @@ export default function SearchBar() {
           setIsVisible={setIsVisible}
           isVisible={isVisible}
           suggestions={suggestions}
-          focusIndex={focusIndex}
-          setFocusIndex={setFocusIndex}
         />
       </form>
     </>
