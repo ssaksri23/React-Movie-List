@@ -46,8 +46,8 @@ export default function SearchBar() {
         </div>
         <SearchList
           setIsVisible={setIsVisible}
-          isVisible={isVisible}
           suggestions={suggestions}
+          value={value}
         />
       </form>
     </>
