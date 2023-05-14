@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import NavBar from "../component/NavBar";
 import movieApi from "../api/movieAPI";
-import MovieList from "../component/MovieList";
+import MovieList from "../component/MovieCardList/MovieList";
 
 export default function NowPlayingMovie() {
   const [loading, setLoading] = useState(false);

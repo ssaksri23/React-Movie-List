@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import movieApi from "../api/movieAPI";
-import MovieList from "../component/MovieList";
+import MovieList from "../component/MovieCardList/MovieList";
 import NavBar from "../component/NavBar";
 
 export default function BoxOffice() {
