@@ -25,10 +25,10 @@ export default function SearchBar() {
       <form
         ref={ref}
         onSubmit={handleSearch}
-        className="w-96 m-auto overflow-hidden "
+        className="w-96 m-auto overflow-hidden"
       >
         <label htmlFor="search_movie" />
-        <div className="relative h-10 w-96 rounded-lg">
+        <div className="relative h-10">
           <input
             value={value}
             onChange={onChangeInput}
@@ -44,11 +44,14 @@ export default function SearchBar() {
             <AiOutlineSearch className="w-5 h-5" />
           </button>
         </div>
-        <SearchList
-          setIsVisible={setIsVisible}
-          suggestions={suggestions}
-          value={value}
-        />
+        <div className="flex justify-center ">
+          <SearchList
+            setIsVisible={setIsVisible}
+            suggestions={suggestions}
+            value={value}
+            isVisible={isVisible}
+          />
+        </div>
       </form>
     </>
   );

@@ -1,7 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchList({ suggestions = [], setIsVisible, value }) {
+export default function SearchList({
+  suggestions = [],
+  setIsVisible,
+  isVisible,
+}) {
   const navigate = useNavigate();
 
   const handleClick = (e, suggestion) => {
@@ -15,15 +19,15 @@ export default function SearchList({ suggestions = [], setIsVisible, value }) {
   return (
     <ul
       className={`${
-        value ? "block" : "hidden"
-      } w-96 p-2 mt-2 border-2 border-grey z-30 absolute bg-white max-h-96 overflow-y-auto}`}
+        isVisible ? "block" : "hidden"
+      } p-2 mt-2 border-2 border-grey z-30 absolute bg-white overflow-hidden max-h-96 overflow-y-auto w-80}`}
     >
-      {value && suggestions.length === 0 && <div>검색어 없음</div>}
+      {suggestions.length === 0 && <div className="w-80">검색어 없음</div>}
       {suggestions.length > 0 &&
         suggestions.map((suggestion) => (
           <li
             key={suggestion.id}
-            className="pb-2 hover:bg-grey1"
+            className="w-80 hover:bg-grey1"
             onClick={(e) => handleClick(e, suggestion)}
           >
             <button

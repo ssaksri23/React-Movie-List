@@ -15,7 +15,6 @@ export default function BoxOffice() {
 
   const getDailyMovie = useCallback(async () => {
     const res = await movieApi.getBoxOfficeList(pageNum);
-    console.log("실행");
     setLoading(true);
     if (res.length > 0) {
       setMovieList((prev) => [...prev, ...res]);
