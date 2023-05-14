@@ -30,9 +30,11 @@ const searchMovie = async (keyword) => {
 };
 
 // 현재 상영중인 영화 조회 함수
-const getNowPlayingMovieList = async () => {
+const getNowPlayingMovieList = async (pageNum) => {
   try {
-    const response = await axiosInstance.get("/movie/now_playing");
+    const response = await axiosInstance.get("/movie/now_playing", {
+      params: { page: pageNum },
+    });
     return response.data.results;
   } catch (error) {
     if (error instanceof AxiosError) {
