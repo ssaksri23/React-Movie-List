@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SearchList({ suggestions, isVisible, setIsVisible }) {
   const navigate = useNavigate();
-  console.log(isVisible);
 
   const handleClick = (e, suggestion) => {
     e.preventDefault();

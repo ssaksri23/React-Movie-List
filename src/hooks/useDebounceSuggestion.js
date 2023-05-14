@@ -8,12 +8,12 @@ export const useDebounceSuggestion = (keyword) => {
   const [suggestions, setSuggestions] = useState([]);
 
   const fetchSuggestions = useCallback(async () => {
-    const suggestionList = await movieApi.searchMovie(keyword);
+    const res = await movieApi.searchMovie(keyword);
     if (!suggestions) {
       setSuggestions([]);
       return;
     }
-    setSuggestions(suggestionList);
+    setSuggestions(res);
   }, [keyword]);
 
   useDebounce(fetchSuggestions, RECOMMENDATION_DELAY);
