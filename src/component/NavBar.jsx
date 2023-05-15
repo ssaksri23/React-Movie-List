@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <header className="">
       <div className="flex flex-col ">
-        <Link to="/" className="text-3xl py-7">
+        <Link to="/" className="text-4xl py-7">
           Hyeppy-Movie
         </Link>
         <SearchBar />

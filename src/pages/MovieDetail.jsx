@@ -24,8 +24,8 @@ export default function MovieDetail() {
 
   return (
     <>
-      <Headers className="text-2xl">영화 상세 페이지</Headers>
-      <div className="flex my-10">
+      <Headers>영화 상세 페이지</Headers>
+      <div className="flex my-10 min-w-detail">
         <img
           className="w-52"
           src={`https://image.tmdb.org/t/p/original/${poster_path}`}
@@ -45,7 +45,7 @@ export default function MovieDetail() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="min-w-detail">
         <TabMenu overview={overview} defaultTab={1} />
       </div>
     </>

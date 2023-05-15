@@ -5,6 +5,9 @@ module.exports = {
     container: {
       center: true,
     },
+    minWidth: {
+      detail: "432px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
