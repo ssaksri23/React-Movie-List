@@ -4,6 +4,7 @@ import Title from "../component/MovieInfo/Title";
 import Headers from "../component/Headers";
 import Info from "../component/MovieInfo/Info";
 import TabMenu from "../component/TabMenu";
+import BackButton from "../component/common/BackButton";
 
 export default function MovieDetail() {
   const {
@@ -23,6 +24,7 @@ export default function MovieDetail() {
   } = useLocation();
   return (
     <>
+      <BackButton />
       <Headers>영화 상세 페이지</Headers>
       <div className="flex my-10 min-w-detail">
         <img
