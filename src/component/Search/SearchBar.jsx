@@ -5,19 +5,24 @@ import { useDebounceSuggestion } from "../../hooks/useDebounceSuggestion";
 import SearchList from "./SearchList";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useKeyPress } from "../../hooks/useKeypress";
+import { useNavigate } from "react-router-dom";
 
+// fix: 돋보기 버튼을 통해 검색하기
 export default function SearchBar() {
-  const { value, onChange, setValue } = useInput("");
+  const { value, onChange } = useInput("");
   const { suggestions } = useDebounceSuggestion(value);
   const { ref, isVisible, setIsVisible } = useClickOutside();
   const { focusIndex, setFocusIndex, onKeyDownHandler } = useKeyPress(
     suggestions,
-    setValue
+    handleDetailPage
   );
 
-  const handleSearch = (e) => {
-    setIsVisible(false);
-  };
+  const navigate = useNavigate();
+  function handleDetailPage(suggestion) {
+    navigate(`/details/${suggestion.id}`, {
+      state: { movieInfo: suggestion },
+    });
+  }
 
   const onChangeInput = (e) => {
     onChange(e);
@@ -26,22 +31,12 @@ export default function SearchBar() {
 
   return (
     <>
-      <form
-        ref={ref}
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSearch();
-        }}
-        className="w-96 m-auto overflow-hidden"
-      >
+      <form ref={ref} className="w-96 m-auto overflow-hidden">
         <label htmlFor="search_movie" />
         <div className="relative h-10">
           <input
             value={value}
             onChange={onChangeInput}
-            onFocus={() => {
-              setIsVisible(true);
-            }}
             onKeyDown={onKeyDownHandler}
             id="search_movie"
             type="text"
@@ -54,13 +49,11 @@ export default function SearchBar() {
         </div>
         <div className="flex justify-center ">
           <SearchList
-            setIsVisible={setIsVisible}
             suggestions={suggestions}
-            value={value}
             isVisible={isVisible}
             focusIndex={focusIndex}
             setFocusIndex={setFocusIndex}
-            onClick={handleSearch}
+            handleDetailPage={handleDetailPage}
           />
         </div>
       </form>

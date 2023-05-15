@@ -1,24 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 // fix :Enter 시 input 값 셋팅이 아닌, 디테일 페이지 이동하기
 export default function SearchList({
   suggestions = [],
-  setIsVisible,
   isVisible,
   focusIndex,
   setFocusIndex,
-  onClick,
+  handleDetailPage,
 }) {
-  // const navigate = useNavigate();
-
-  // const handleClick = (e, suggestion) => {
-  //   e.preventDefault();
-  //   setIsVisible(false); // SearchList 닫기
-  //   navigate(`/details/${suggestion.id}`, {
-  //     state: { movieInfo: suggestion },
-  //   });
-  // };
-
   return (
     <ul
       className={`${
@@ -31,14 +19,13 @@ export default function SearchList({
           <li
             key={suggestion.id}
             className={`${index + 1 === focusIndex ? "bg-grey1" : ""} w-80`}
-            // onClick={(e) => handleClick(e, suggestion)}
-            onSubmit={(e) => {
-              onClick();
-            }}
           >
             <button
               onMouseOver={() => setFocusIndex(index + 1)}
-              type="submit"
+              onClick={() => {
+                handleDetailPage(suggestion);
+              }}
+              type="button"
               className="text-ellipsis overflow-hidden whitespace-nowrap w-full text-left"
             >
               {suggestion.title}

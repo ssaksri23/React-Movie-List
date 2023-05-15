@@ -6,31 +6,27 @@ export const searchEnterKeyCode = {
   ARROW_DOWN: 40,
 };
 
-export const searchLength = {
-  INDEX_MAX: 8,
-  LIST_MAX: 7,
-};
-
-export const useKeyPress = (recommendations, setValue) => {
+export const useKeyPress = (recommendations, handleClick) => {
   const [focusIndex, setFocusIndex] = useState(0);
-  const recommendLen = recommendations.length + 1;
+  const recommendLen = recommendations.length;
 
   const onKeyDownHandler = (event) => {
     switch (event.keyCode) {
       case searchEnterKeyCode.ENTER:
         if (!recommendations[focusIndex - 1]) return;
-        console.log(recommendations[focusIndex - (1 % recommendLen)].title);
-        setValue(recommendations[focusIndex - (1 % recommendLen)].title);
         setFocusIndex(0);
+        const searchItem = recommendations[focusIndex - 1];
+        handleClick(searchItem); // handleClick 함수를 불러와 선택된 검색어로 페이지 이동
+        break;
 
-        break;
       case searchEnterKeyCode.ARROW_DOWN:
-        console.log(focusIndex);
-        setFocusIndex(focusIndex < recommendLen - 1 ? focusIndex + 1 : 1);
+        setFocusIndex(focusIndex < recommendLen ? focusIndex + 1 : 1);
         break;
+
       case searchEnterKeyCode.ARROW_UP:
         setFocusIndex(focusIndex === 1 ? recommendLen - 1 : focusIndex - 1);
         break;
+
       default:
         break;
     }
