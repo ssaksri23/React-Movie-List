@@ -1,20 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+// fix :Enter 시 input 값 셋팅이 아닌, 디테일 페이지 이동하기
 export default function SearchList({
   suggestions = [],
   setIsVisible,
   isVisible,
+  focusIndex,
+  setFocusIndex,
+  onClick,
 }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = (e, suggestion) => {
-    e.preventDefault();
-    setIsVisible(false); // SearchList 닫기
-    navigate(`/details/${suggestion.id}`, {
-      state: { movieInfo: suggestion },
-    });
-  };
+  // const handleClick = (e, suggestion) => {
+  //   e.preventDefault();
+  //   setIsVisible(false); // SearchList 닫기
+  //   navigate(`/details/${suggestion.id}`, {
+  //     state: { movieInfo: suggestion },
+  //   });
+  // };
 
   return (
     <ul
@@ -24,15 +27,19 @@ export default function SearchList({
     >
       {suggestions.length === 0 && <div className="w-80">검색어 없음</div>}
       {suggestions.length > 0 &&
-        suggestions.map((suggestion) => (
+        suggestions.map((suggestion, index) => (
           <li
             key={suggestion.id}
-            className="w-80 hover:bg-grey1"
-            onClick={(e) => handleClick(e, suggestion)}
+            className={`${index + 1 === focusIndex ? "bg-grey1" : ""} w-80`}
+            // onClick={(e) => handleClick(e, suggestion)}
+            onSubmit={(e) => {
+              onClick();
+            }}
           >
             <button
+              onMouseOver={() => setFocusIndex(index + 1)}
               type="submit"
-              className="text-ellipsis overflow-hidden whitespace-nowrap w-full text-left "
+              className="text-ellipsis overflow-hidden whitespace-nowrap w-full text-left"
             >
               {suggestion.title}
             </button>
