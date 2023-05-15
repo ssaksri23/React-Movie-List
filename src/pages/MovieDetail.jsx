@@ -21,7 +21,6 @@ export default function MovieDetail() {
       },
     },
   } = useLocation();
-
   return (
     <>
       <Headers>영화 상세 페이지</Headers>
@@ -32,7 +31,7 @@ export default function MovieDetail() {
           alt="영화포스터"
         />
         <div className="flex flex-col gap-8 pl-8">
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col text-left">
             <Title level={1} title={title} />
             <Title level={1} original_title={original_title} />
           </div>
