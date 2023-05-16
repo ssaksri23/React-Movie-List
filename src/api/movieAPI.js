@@ -13,7 +13,6 @@ const getBoxOfficeList = async (pageNum) => {
         page: pageNum,
       },
     });
-    console.log(response.data.data);
     return response.data.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -25,10 +24,15 @@ const getBoxOfficeList = async (pageNum) => {
 // 키워드로 영화 검색하는 함수
 const searchMovie = async (keyword) => {
   try {
-    const response = await axiosInstance.get("/search/movie", {
-      params: { query: keyword },
+    const response = await axios.get("/.netlify/functions/search", {
+      params: {
+        language: "ko",
+        sort_by: "popularity.desc",
+        include_adult: "true",
+        query: keyword,
+      },
     });
-    const data = await response.data.results;
+    const data = await response.data.data;
 
     return data;
   } catch (error) {

@@ -8,7 +8,8 @@ export const searchEnterKeyCode = {
 
 export const useKeyPress = (recommendations, handleClick) => {
   const [focusIndex, setFocusIndex] = useState(0);
-  const recommendLen = recommendations.length;
+
+  const recommendLen = recommendations ? recommendations.length : 0;
 
   const onKeyDownHandler = (event) => {
     switch (event.keyCode) {
