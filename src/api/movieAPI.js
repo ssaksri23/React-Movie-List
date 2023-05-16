@@ -5,7 +5,7 @@ import { axiosInstance } from "./axiosInstance";
 
 const getBoxOfficeList = async (pageNum) => {
   try {
-    const response = await axios.get("/netlify/functions/movie", {
+    const response = await axios.get("/.netlify/functions/movie", {
       params: {
         language: "ko",
         sort_by: "popularity.desc",
