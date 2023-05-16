@@ -4,14 +4,17 @@ import { axiosInstance } from "./axiosInstance";
 // 박스오피스 영화 조회 함수
 const getBoxOfficeList = async (pageNum) => {
   try {
-    const response = await axios.get("/.netlify/functions/movie", {
-      params: {
-        language: "ko",
-        sort_by: "popularity.desc",
-        include_adult: "true",
-        page: pageNum,
-      },
-    });
+    const response = await axios.get(
+      `${process.env.REACT_APP_HOST_SERVER}/.netlify/functions/movie`,
+      {
+        params: {
+          language: "ko",
+          sort_by: "popularity.desc",
+          include_adult: "true",
+          page: pageNum,
+        },
+      }
+    );
     console.log(response.data.data);
     return response.data.data;
   } catch (error) {
