@@ -16,7 +16,7 @@ export default function NowPlayingMovie() {
   const getNowPlayingrMovie = useCallback(async () => {
     const res = await movieApi.getNowPlayingMovieList(pageNum);
     setLoading(true);
-    if (res.length > 0) {
+    if (Array.isArray(res) && res.length > 0) {
       setMovieList((prev) => [...prev, ...res]);
     }
   }, [pageNum]);

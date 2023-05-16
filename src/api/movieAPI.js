@@ -5,7 +5,7 @@ import { axiosInstance } from "./axiosInstance";
 
 const getBoxOfficeList = async (pageNum) => {
   try {
-    const response = await axios.get("/.netlify/functions/movie", {
+    const response = await axios.get("/.netlify/functions/boxofficemovie", {
       params: {
         language: "ko",
         sort_by: "popularity.desc",
@@ -43,10 +43,15 @@ const searchMovie = async (keyword) => {
 // 현재 상영중인 영화 조회 함수
 const getNowPlayingMovieList = async (pageNum) => {
   try {
-    const response = await axiosInstance.get("/movie/now_playing", {
-      params: { page: pageNum },
+    const response = await axios.get("/.netlify/functions/nowplayingmovie", {
+      params: {
+        language: "ko",
+        sort_by: "popularity.desc",
+        include_adult: "true",
+        page: pageNum,
+      },
     });
-    return response.data.results;
+    return response.data.data;
   } catch (error) {
     if (error instanceof AxiosError) {
       return error.response;
