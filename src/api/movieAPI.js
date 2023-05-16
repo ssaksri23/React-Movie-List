@@ -2,6 +2,7 @@ import axios, { AxiosError } from "axios";
 import { axiosInstance } from "./axiosInstance";
 
 // 박스오피스 영화 조회 함수
+
 const getBoxOfficeList = async (pageNum) => {
   try {
     const response = await axios.get(
