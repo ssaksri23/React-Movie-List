@@ -1,13 +1,19 @@
-import { AxiosError } from "axios";
+import axios, { AxiosError } from "axios";
 import { axiosInstance } from "./axiosInstance";
 
 // 박스오피스 영화 조회 함수
 const getBoxOfficeList = async (pageNum) => {
   try {
-    const response = await axiosInstance.get("/discover/movie", {
-      params: { page: pageNum },
+    const response = await axios.get("/.netlify/functions/movie", {
+      params: {
+        language: "ko",
+        sort_by: "popularity.desc",
+        include_adult: "true",
+        page: pageNum,
+      },
     });
-    return response.data.results;
+    console.log(response.data.data);
+    return response.data.data;
   } catch (error) {
     if (error instanceof AxiosError) {
       return error.response;
