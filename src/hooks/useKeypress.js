@@ -8,7 +8,7 @@ export const searchEnterKeyCode = {
 
 //recommendations 배열과 handleClick 함수를 입력값으로 받아 키보드로 추천 검색 이동이 가능한 커스텀 훅
 export const useKeyPress = (recommendations, handleClick) => {
-  // 현재 포커스가 있는 추천 검색어의 인덱스를 가리킵니다.
+  // 현재 포커스가 있는 추천 검색어의 인덱스
   const [focusIndex, setFocusIndex] = useState(0);
   const recommendLen = recommendations ? recommendations.length : 0;
 

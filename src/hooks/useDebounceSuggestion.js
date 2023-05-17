@@ -15,7 +15,7 @@ export const useDebounceSuggestion = (keyword) => {
       return;
     }
     setSuggestions(res);
-  }, [keyword, suggestions]);
+  }, [keyword]);
 
   useDebounce(fetchSuggestions, RECOMMENDATION_DELAY);
 

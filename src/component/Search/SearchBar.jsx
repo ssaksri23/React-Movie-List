@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useInput } from "../../hooks/useInput";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDebounceSuggestion } from "../../hooks/useDebounceSuggestion";
