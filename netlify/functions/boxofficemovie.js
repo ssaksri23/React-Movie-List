@@ -1,4 +1,3 @@
-// ./functions/movie.js
 const axios = require("axios");
 const urlencode = require("urlencode");
 
@@ -14,8 +13,6 @@ exports.handler = async (event) => {
   const response = await axios.get(url);
   const { headers } = response;
   headers["Access-Control-Allow-Origin"] = process.env.REACT_APP_HOST_SERVER; // *** 동일출처정책 문제해결
-
-  console.log(response.data.results);
 
   return {
     statusCode: 200,

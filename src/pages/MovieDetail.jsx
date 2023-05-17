@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Title from "../component/MovieInfo/Title";
-import Headers from "../component/Headers";
-import Info from "../component/MovieInfo/Info";
-import TabMenu from "../component/TabMenu";
+import Title from "../component/MovieDetail/Title";
+import Headers from "../component/common/Headers";
+import Info from "../component/MovieDetail/Info";
+import TabMenu from "../component/MovieDetail/TabMenu";
 import BackButton from "../component/common/BackButton";
 
 export default function MovieDetail() {
