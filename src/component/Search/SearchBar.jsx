@@ -7,7 +7,7 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import { useKeyPress } from "../../hooks/useKeypress";
 import { useNavigate } from "react-router-dom";
 
-// fix: 돋보기 버튼을 통해 검색하기
+// 검색창 컴포넌트
 export default function SearchBar() {
   const { value, onChange } = useInput("");
   const { suggestions } = useDebounceSuggestion(value);
@@ -16,11 +16,12 @@ export default function SearchBar() {
     suggestions,
     handleDetailPage
   );
-
   const navigate = useNavigate();
-  function handleDetailPage(suggestion) {
-    navigate(`/details/${suggestion.id}`, {
-      state: { movieInfo: suggestion },
+
+  // 추천 검색 리스트에서 Enter 클릭 시 디테일 페이지 이동
+  function handleDetailPage(searchItem) {
+    navigate(`/details/${searchItem.id}`, {
+      state: { movieInfo: searchItem },
     });
   }
 

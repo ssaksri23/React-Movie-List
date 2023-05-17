@@ -1,6 +1,7 @@
 import React from "react";
 import MovieItem from "./MovieItem";
 
+// 영화 리스트 컴포넌트
 export default function MovieList({ movieList }) {
   return (
     <ul

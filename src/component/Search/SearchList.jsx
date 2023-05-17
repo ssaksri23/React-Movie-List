@@ -1,5 +1,6 @@
 import React from "react";
-// fix :Enter 시 input 값 셋팅이 아닌, 디테일 페이지 이동하기
+
+// 추천 검색 리스트 컴포넌트
 export default function SearchList({
   suggestions = [],
   isVisible,

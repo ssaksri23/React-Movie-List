@@ -7,6 +7,7 @@ import TabMenu from "../component/MovieDetail/TabMenu";
 import BackButton from "../component/common/BackButton";
 
 export default function MovieDetail() {
+  // MovieItem 컴포넌트에서 useNaviget를 통해 영화 정보를 받아옵니다.
   const {
     state: {
       movieInfo: {
@@ -22,6 +23,7 @@ export default function MovieDetail() {
       },
     },
   } = useLocation();
+
   return (
     <>
       <BackButton />

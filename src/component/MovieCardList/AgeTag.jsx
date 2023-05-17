@@ -1,5 +1,6 @@
 import React from "react";
 
+// 성인 여부에 따른 시청 연령 제한 AgeTag 컴포넌트
 export default function AgeTag({ adult }) {
   return (
     <div

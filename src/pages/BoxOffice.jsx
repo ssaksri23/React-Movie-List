@@ -9,10 +9,6 @@ export default function BoxOffice() {
   const [pageNum, setPageNum] = useState(1);
   const target = useRef(null);
 
-  const loadMore = useCallback(() => {
-    setPageNum((prevPageNum) => prevPageNum + 1);
-  }, []);
-
   const getDailyMovie = useCallback(async () => {
     const res = await movieApi.getBoxOfficeList(pageNum);
     setLoading(true);
@@ -25,10 +21,16 @@ export default function BoxOffice() {
     getDailyMovie();
   }, [getDailyMovie]);
 
+  const loadMore = useCallback(() => {
+    setPageNum((prevPageNum) => prevPageNum + 1);
+  }, []);
+
+  // 무한 스크롤을 위해 intersectionObserver API로 타겟 요소를 추적
   useEffect(() => {
     if (loading) {
       const observer = new IntersectionObserver(
         (entries) => {
+          // 타켓 요소에 교차되었을 때 loadMore 함수 실행
           if (entries[0].isIntersecting) {
             loadMore();
           }
@@ -39,6 +41,7 @@ export default function BoxOffice() {
     }
   }, [loading, loadMore]);
 
+  // movieList가 비어있을 때 '로딩중입니다' 렌더링
   if (!movieList) return <p>로딩중입니다..</p>;
   return (
     <>

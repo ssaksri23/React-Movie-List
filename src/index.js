@@ -8,6 +8,7 @@ import MovieDetail from "./pages/MovieDetail";
 import BoxOffice from "./pages/BoxOffice";
 import NowPlayingMovie from "./pages/NowPlayingMovie";
 
+// 라우터
 const router = createBrowserRouter([
   {
     path: "/",
