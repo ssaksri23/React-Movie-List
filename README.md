@@ -7,6 +7,10 @@
 https://main--hyeppy-movie.netlify.app/
 <br>
 <br>
+# 사용 API
+[TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
+<br>
+<br>
 
 # 프로젝트 시연
 |영화 목록 반응형|영화 검색 기능|클릭시 상세페이지 이동|
@@ -30,4 +34,43 @@ https://main--hyeppy-movie.netlify.app/
 
 # 폴더구조
 ```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📜axiosInstance.js
+ ┃ ┗ 📜movieAPI.js
+ ┣ 📂component
+ ┃ ┣ 📂MovieCardList
+ ┃ ┃ ┣ 📜AgeTag.jsx
+ ┃ ┃ ┣ 📜MovieContent.jsx
+ ┃ ┃ ┣ 📜MovieImg.jsx
+ ┃ ┃ ┣ 📜MovieItem.jsx
+ ┃ ┃ ┗ 📜MovieList.jsx
+ ┃ ┣ 📂MovieDetail
+ ┃ ┃ ┣ 📜Info.jsx
+ ┃ ┃ ┣ 📜TabMenu.jsx
+ ┃ ┃ ┗ 📜Title.jsx
+ ┃ ┣ 📂Search
+ ┃ ┃ ┣ 📜SearchBar.jsx
+ ┃ ┃ ┗ 📜SearchList.jsx
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📜BackButton.jsx
+ ┃ ┃ ┗ 📜Headers.jsx
+ ┃ ┗ 📜NavBar.jsx
+ ┣ 📂constant
+ ┃ ┗ 📜baseURL.js
+ ┣ 📂hooks
+ ┃ ┣ 📜useClickOutside.js
+ ┃ ┣ 📜useDebounce.js
+ ┃ ┣ 📜useDebounceSuggestion.js
+ ┃ ┣ 📜useInput.js
+ ┃ ┗ 📜useKeypress.js
+ ┣ 📂pages
+ ┃ ┣ 📜BoxOffice.jsx
+ ┃ ┣ 📜MovieDetail.jsx
+ ┃ ┣ 📜NotFound.jsx
+ ┃ ┗ 📜NowPlayingMovie.jsx
+ ┣ 📜.DS_Store
+ ┣ 📜App.js
+ ┣ 📜index.css
+ ┗ 📜index.js
 ```
