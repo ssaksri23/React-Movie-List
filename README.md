@@ -19,7 +19,8 @@ https://main--hyeppy-movie.netlify.app/
 
 |클라이언트에서 API Key 숨기기|무한 스크롤 기능|잘못된 경로 리다이렉트| 
 |---|---|---|
-|![image](https://github.com/khv2644511/React-Movie-List/assets/38063033/d70ee99d-e85d-433f-9ca7-66c0f9547f02)|![todoedit](https://user-images.githubusercontent.com/38063033/230762864-9f63327f-7566-4db6-9c69-b3826e1e271a.gif)|![리다이렉트](https://github.com/khv2644511/React-Movie-List/assets/38063033/1d75c004-3c60-4b47-b459-60a527908a79)|
+|![image](https://github.com/khv2644511/React-Movie-List/assets/38063033/d70ee99d-e85d-433f-9ca7-66c0f9547f02)|![무무](https://github.com/khv2644511/React-Movie-List/assets/38063033/71cbb67b-5725-47f1-b7f8-ddee80718076)
+|![리다이렉트](https://github.com/khv2644511/React-Movie-List/assets/38063033/1d75c004-3c60-4b47-b459-60a527908a79)|
 <br>
 <br>
 
