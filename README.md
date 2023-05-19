@@ -45,7 +45,7 @@ https://main--hyeppy-movie.netlify.app/
 
 ## 기술스택
 - react
-- tailwind
+- tailwindcss
 - axios
 - react-icons
 <br>
