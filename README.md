@@ -29,7 +29,7 @@ https://main--hyeppy-movie.netlify.app/
 
 ## 프로젝트 시연
 ### ✅ 필수 기능
-|영화 목록 반응형|영화 검색 기능|클릭시 상세페이지 이동|
+|영화 목록 반응형|영화 검색 기능 <br> *추천검색어를 통해 검색|클릭시 상세페이지 이동|
 |---|---|---|
 |![반응](https://github.com/khv2644511/React-Movie-List/assets/38063033/0f640cd0-e0f5-4108-a098-a5130b0fb1f8)|![55](https://github.com/khv2644511/React-Movie-List/assets/38063033/2582791e-45f1-4ae1-b18e-d5ae893aac54)|![상세페이지이동](https://github.com/khv2644511/React-Movie-List/assets/38063033/2ec9fb92-8d42-4932-a311-2419b40d96c5)|
 
