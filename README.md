@@ -4,7 +4,7 @@
 <br>
 
 ## 배포 URL
-https://main--리치 무비.netlify.app/
+https://main--금빛 영화.netlify.app/
 <br>
 <br>
 ## 사용 API
