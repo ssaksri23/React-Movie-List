@@ -10,7 +10,7 @@ export default function NavBar() {
     <header className="">
       <div className="flex flex-col ">
         <Link to="/" className="text-4xl py-7">
-          Hyeppy-Movie
+          리치 무비
         </Link>
         <SearchBar />
       </div>

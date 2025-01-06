@@ -4,7 +4,7 @@
 <br>
 
 ## 배포 URL
-https://main--hyeppy-movie.netlify.app/
+https://main--리치 무비.netlify.app/
 <br>
 <br>
 ## 사용 API
