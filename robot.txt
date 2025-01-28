@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# 네이버 검색엔진(Naverbot)
+User-agent: Yeti
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# 구글 검색엔진(Googlebot)
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# 사이트맵 위치 지정
+Sitemap: https://yourwebsite.com/sitemap.xml
