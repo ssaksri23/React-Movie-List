@@ -16,4 +16,4 @@ Disallow: /private/
 Allow: /
 
 # 사이트맵 위치 지정
-Sitemap: https://yourwebsite.com/sitemap.xml
+Sitemap: https://richmovie.netlify.app/sitemap.xml
