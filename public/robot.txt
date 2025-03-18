@@ -1,7 +1,5 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Allow: /
+Allow:/
 
 # 사이트맵 위치 지정
 Sitemap: https://richmovie.netlify.app/sitemap.xml
